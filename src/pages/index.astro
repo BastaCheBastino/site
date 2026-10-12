@@ -1,0 +1,53 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { siteBase, withBase } from "../lib/base";
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
+);
+const base = siteBase();
+---
+
+<BaseLayout title="Home" path={base}>
+  <section class="hero">
+    <h1>Un percorso FIRE italiano, mentre accade.</h1>
+    <p class="lede">
+      Ho 46 anni e un obiettivo: rendere il lavoro una scelta intorno al 2034. Racconto numeri,
+      decisioni e dubbi — senza finale garantito.
+    </p>
+    <div class="cta-row">
+      <a class="btn" href={withBase("percorso/")}>Inizia dal percorso</a>
+      <a class="btn secondary" href={withBase("chi-sono/")}>Chi sono</a>
+    </div>
+  </section>
+
+  <h2>Fondativi in preview</h2>
+  <ul class="list">
+    {
+      posts.map((post) => (
+        <li>
+          <a class="list-cover" href={withBase(`articoli/${post.id}/`)}>
+            {post.data.cover && (
+              <img
+                src={withBase(post.data.cover.replace(/^\//, ""))}
+                alt={post.data.coverAlt || ""}
+                width="320"
+                height="180"
+              />
+            )}
+            <span>
+              <span style="display:block; font-size:1.15rem; color:inherit;">
+                {post.data.title}
+              </span>
+              <span class="meta">
+                {post.data.order != null && <>#{post.data.order} · </>}
+                {post.data.description}
+              </span>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

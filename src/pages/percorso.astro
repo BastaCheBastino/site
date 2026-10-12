@@ -1,0 +1,47 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { withBase } from "../lib/base";
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
+);
+---
+
+<BaseLayout
+  title="Percorso"
+  description="L’arco dei pezzi fondativi del percorso FIRE."
+>
+  <section class="prose">
+    <h1>Il percorso</h1>
+    <p class="lede">
+      Non un feed infinito: una sequenza. I pezzi sotto sono bozze in preview — ancora da
+      ri-approvare prima di un eventuale lancio.
+    </p>
+  </section>
+  <ol class="list" style="list-style: none; counter-reset: none;">
+    {
+      posts.map((post) => (
+        <li>
+          <a class="list-cover" href={withBase(`articoli/${post.id}/`)}>
+            {post.data.cover && (
+              <img
+                src={withBase(post.data.cover.replace(/^\//, ""))}
+                alt={post.data.coverAlt || ""}
+                width="320"
+                height="180"
+              />
+            )}
+            <span>
+              <span style="display:block; font-size:1.15rem; color:inherit;">
+                {post.data.order != null && `${String(post.data.order).padStart(2, "0")} · `}
+                {post.data.title}
+              </span>
+              <span class="meta">{post.data.description}</span>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ol>
+</BaseLayout>

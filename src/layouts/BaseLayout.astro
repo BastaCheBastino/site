@@ -1,0 +1,52 @@
+---
+import "../styles/global.css";
+import { withBase } from "../lib/base";
+
+interface Props {
+  title: string;
+  description?: string;
+  path?: string;
+}
+
+const { title, description = "Percorso FIRE italiano in corso. Preview non pubblica.", path = "" } =
+  Astro.props;
+const pageTitle = title === "Home" ? "Basta che bastino (preview)" : `${title} · Basta che bastino`;
+const canonical = new URL(path || Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <div class="banner-preview">
+      <strong>Preview</strong> — sito di prova su GitHub Pages. Non è il lancio pubblico.
+    </div>
+    <header class="site-header">
+      <div class="wrap inner">
+        <a class="brand" href={withBase()}>Basta che bastino</a>
+        <nav class="nav" aria-label="Principale">
+          <a href={withBase("percorso/")}>Percorso</a>
+          <a href={withBase("articoli/")}>Articoli</a>
+          <a href={withBase("chi-sono/")}>Chi sono</a>
+          <a href={withBase("newsletter/")}>Newsletter</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap inner">
+        <p>Obiettivo 2034 — non una promessa. Anonimo verso i lettori.</p>
+        <p class="muted">Bozze in preview · noindex</p>
+      </div>
+    </footer>
+  </body>
+</html>

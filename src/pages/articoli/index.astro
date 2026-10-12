@@ -1,0 +1,42 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { withBase } from "../../lib/base";
+
+const posts = (await getCollection("posts")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+---
+
+<BaseLayout title="Articoli" description="Archivio articoli (preview).">
+  <section class="prose">
+    <h1>Articoli</h1>
+    <p class="lede">Elenco cronologico. In preview coincidono con i fondativi.</p>
+  </section>
+  <ul class="list">
+    {
+      posts.map((post) => (
+        <li>
+          <a class="list-cover" href={withBase(`articoli/${post.id}/`)}>
+            {post.data.cover && (
+              <img
+                src={withBase(post.data.cover.replace(/^\//, ""))}
+                alt={post.data.coverAlt || ""}
+                width="320"
+                height="180"
+              />
+            )}
+            <span>
+              <span style="display:block; font-size:1.15rem; color:inherit;">
+                {post.data.title}
+              </span>
+              <span class="meta">
+                {post.data.pubDate.toLocaleDateString("it-IT")} · {post.data.description}
+              </span>
+            </span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
