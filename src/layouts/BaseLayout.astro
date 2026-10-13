@@ -12,6 +12,7 @@ const { title, description = "Percorso FIRE italiano in corso. Preview non pubbl
   Astro.props;
 const pageTitle = title === "Home" ? "Basta che bastino (preview)" : `${title} · Basta che bastino`;
 const canonical = new URL(path || Astro.url.pathname, Astro.site);
+const isProd = import.meta.env.PROD;
 ---
 
 <!doctype html>
@@ -23,6 +24,16 @@ const canonical = new URL(path || Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <title>{pageTitle}</title>
+    {
+      isProd && (
+        <script
+          is:inline
+          data-goatcounter="https://bastachebastino.goatcounter.com/count"
+          async
+          src="https://gc.zgo.at/count.js"
+        ></script>
+      )
+    }
   </head>
   <body>
     <div class="banner-preview">
