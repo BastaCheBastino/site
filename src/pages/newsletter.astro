@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const substackEmbed = "https://bastachebastino.substack.com/embed";
+const substackUrl = "https://bastachebastino.substack.com";
 ---
 
 <BaseLayout
@@ -13,13 +16,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       qui. Il canone resta su questo sito; la lista serve solo a non perdere i pezzi nuovi.
     </p>
     <p>
-      Useremo <strong>Substack</strong> solo come distribuzione (niente lock-in dei contenuti).
-      Iscrizione e form arriveranno al <strong>lancio pubblico</strong> — non in questa preview.
+      La distribuzione passa da <strong>Substack</strong> (niente lock-in dei contenuti). Privacy in
+      una riga: niente profiling né ads; disiscrizione sempre dal provider della lista.
     </p>
-    <p>
-      Privacy in una riga: niente profiling né ads; la mail è solo per avvisarti dei nuovi pezzi.
-      Disiscrizione sempre disponibile dal provider della lista.
-    </p>
-    <p class="muted">Placeholder intenzionale — niente iscrizione finché non è il go-live.</p>
+
+    <div class="newsletter-embed">
+      <iframe
+        title="Iscriviti alla newsletter Basta che bastino"
+        src={substackEmbed}
+        width="480"
+        height="150"
+        style="border: 1px solid var(--rule); background: var(--bg-elevated); max-width: 100%;"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+      <p class="muted">
+        Se il form non compare:{" "}
+        <a href={substackUrl} rel="noopener noreferrer">iscriviti su Substack</a>.
+      </p>
+    </div>
   </article>
 </BaseLayout>
