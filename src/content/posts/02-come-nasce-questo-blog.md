@@ -4,7 +4,7 @@ description: "Come nasce questo blog: interviste, AI come interlocutore, respons
 pubDate: 2026-10-09
 order: 2
 series: fondativi
-draft: true
+draft: false
 cover: /covers/02-cover.jpg
 coverAlt: "Cover astratta: pagine aperte e una luce quieta"
 ---

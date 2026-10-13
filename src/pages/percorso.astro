@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { withBase } from "../lib/base";
 
-const posts = (await getCollection("posts")).sort(
+const posts = (await getCollection("posts", ({ data }) => data.draft !== true)).sort(
   (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
 );
 ---
@@ -15,8 +15,8 @@ const posts = (await getCollection("posts")).sort(
   <section class="prose">
     <h1>Il percorso</h1>
     <p class="lede">
-      Non un feed infinito: una sequenza. I pezzi sotto sono bozze in preview — ancora da
-      ri-approvare prima di un eventuale lancio.
+      Non un feed infinito: una sequenza. In preview pubblica: solo i primi tre pezzi (onda 1).
+      04–05 restano in lavorazione.
     </p>
   </section>
   <ol class="list" style="list-style: none; counter-reset: none;">

@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { siteBase, withBase } from "../lib/base";
 
-const posts = (await getCollection("posts")).sort(
+const posts = (await getCollection("posts", ({ data }) => data.draft !== true)).sort(
   (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
 );
 const base = siteBase();
@@ -22,7 +22,7 @@ const base = siteBase();
     </div>
   </section>
 
-  <h2>Fondativi in preview</h2>
+  <h2>Fondativi — onda 1</h2>
   <ul class="list">
     {
       posts.map((post) => (

@@ -4,7 +4,7 @@ description: "Il 2034 come equilibrio, non come feticcio: quando il tratto è fi
 pubDate: 2026-10-06
 order: 3
 series: fondativi
-draft: true
+draft: false
 cover: /covers/03-cover.jpg
 coverAlt: "Cover astratta: una soglia-ponte di luce calda"
 ---

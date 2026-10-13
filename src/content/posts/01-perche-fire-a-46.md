@@ -4,7 +4,7 @@ description: "Perché a quarantasei anni, in Italia, sto costruendo un percorso 
 pubDate: 2026-10-08
 order: 1
 series: fondativi
-draft: true
+draft: false
 cover: /covers/01-cover.jpg
 coverAlt: "Cover astratta: due aperture di luce calda"
 ---
