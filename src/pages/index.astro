@@ -3,18 +3,24 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { siteBase, withBase } from "../lib/base";
 
-const posts = (await getCollection("posts", ({ data }) => data.draft !== true)).sort(
-  (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
-);
+const latest = (await getCollection("posts", ({ data }) => data.draft !== true))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
 const base = siteBase();
 ---
 
-<BaseLayout title="Home" path={base} showNewsletterBand>
+<BaseLayout
+  title="Home"
+  path={base}
+  description="Un percorso FIRE italiano in corso: numeri, decisioni e dubbi verso il 2034."
+  showNewsletterBand
+>
   <section class="hero">
     <h1>Un percorso FIRE italiano, mentre accade.</h1>
     <p class="lede">
-      Ho 46 anni e un obiettivo: rendere il lavoro una scelta intorno al 2034. Racconto numeri,
-      decisioni e dubbi — senza finale garantito.
+      A quarantasei anni sto costruendo abbastanza libertà da poter scegliere, intorno al 2034,
+      se continuare a lavorare. Qui ci sono i numeri e le decisioni di quel percorso — e i dubbi
+      che li accompagnano — mentre succede, senza sapere come finisce.
     </p>
     <div class="cta-row">
       <a class="btn" href={withBase("percorso/")}>Inizia dal percorso</a>
@@ -22,10 +28,10 @@ const base = siteBase();
     </div>
   </section>
 
-  <h2>Fondativi — onda 1</h2>
+  <h2>Ultimi articoli</h2>
   <ul class="list">
     {
-      posts.map((post) => (
+      latest.map((post) => (
         <li>
           <a class="list-cover" href={withBase(`articoli/${post.id}/`)}>
             {post.data.cover && (
@@ -41,8 +47,7 @@ const base = siteBase();
                 {post.data.title}
               </span>
               <span class="meta">
-                {post.data.order != null && <>#{post.data.order} · </>}
-                {post.data.description}
+                {post.data.pubDate.toLocaleDateString("it-IT")} · {post.data.description}
               </span>
             </span>
           </a>
@@ -57,4 +62,7 @@ const base = siteBase();
       ))
     }
   </ul>
+  <div class="cta-row">
+    <a class="btn secondary" href={withBase("articoli/")}>Tutti gli articoli</a>
+  </div>
 </BaseLayout>

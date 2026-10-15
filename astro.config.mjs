@@ -13,4 +13,13 @@ export default defineConfig({
   markdown: {
     shikiConfig: { theme: "min-light" },
   },
+  // WSL su /mnt/c: inotify non vede i salvataggi da Windows → senza polling il HMR resta fermo.
+  vite: {
+    server: {
+      watch: {
+        usePolling: true,
+        interval: 1000,
+      },
+    },
+  },
 });

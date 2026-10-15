@@ -8,10 +8,16 @@ const posts = (await getCollection("posts", ({ data }) => data.draft !== true)).
 );
 ---
 
-<BaseLayout title="Articoli" description="Archivio articoli (preview).">
+<BaseLayout
+  title="Articoli"
+  description="Archivio degli articoli pubblicati, in ordine cronologico."
+>
   <section class="prose">
     <h1>Articoli</h1>
-    <p class="lede">Elenco cronologico. In preview coincidono con i fondativi.</p>
+    <p class="lede">
+      L’archivio, dal più recente. Se è la prima volta che passi di qui, il posto giusto per
+      cominciare è il percorso.
+    </p>
   </section>
   <ul class="list">
     {
