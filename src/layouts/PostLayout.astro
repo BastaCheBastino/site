@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import DisqusThread from "../components/DisqusThread.astro";
 import { withBase } from "../lib/base";
 
 interface Props {
@@ -9,17 +10,22 @@ interface Props {
   order?: number;
   cover?: string;
   coverAlt?: string;
+  /** Slug stabile per Disqus (es. id collezione). */
+  identifier: string;
+  /** Path canonico relativo al sito, es. articoli/slug/ */
+  path: string;
 }
 
-const { title, description, pubDate, order, cover, coverAlt } = Astro.props;
+const { title, description, pubDate, order, cover, coverAlt, identifier, path } = Astro.props;
 const dateLabel = pubDate.toLocaleDateString("it-IT", {
   year: "numeric",
   month: "long",
   day: "numeric",
 });
+const canonicalUrl = new URL(path, Astro.site).href;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} path={path}>
   <article class="prose">
     {
       cover && (
@@ -35,4 +41,5 @@ const dateLabel = pubDate.toLocaleDateString("it-IT", {
     <h1>{title}</h1>
     <slot />
   </article>
+  <DisqusThread identifier={identifier} url={canonicalUrl} title={title} />
 </BaseLayout>

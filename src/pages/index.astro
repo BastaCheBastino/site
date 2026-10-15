@@ -46,6 +46,13 @@ const base = siteBase();
               </span>
             </span>
           </a>
+          <a
+            class="comment-count"
+            href={withBase(`articoli/${post.id}/`) + "#disqus_thread"}
+            data-disqus-identifier={post.id}
+          >
+            commenti
+          </a>
         </li>
       ))
     }
