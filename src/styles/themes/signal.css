@@ -1,0 +1,42 @@
+/* Alto contrasto: bianco / nero, un solo accento verde oliva, geometria secca */
+[data-theme="signal"] {
+  --color-scheme: light;
+  --bg: #fafafa;
+  --bg-elevated: #ffffff;
+  --ink: #111111;
+  --ink-muted: #555555;
+  --accent: #3d5c3a;
+  --accent-soft: #5a7a56;
+  --rule: #dddddd;
+  --max: 38rem;
+  --wrap: 48rem;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: "Segoe UI", system-ui, sans-serif;
+  --body-font: var(--serif);
+  --display-font: var(--serif);
+  --body-size: 1.125rem;
+  --body-leading: 1.68;
+  --body-surface: var(--bg);
+  --header-bg: #ffffff;
+  --header-blur: none;
+  --radius: 0;
+  --btn-radius: 0;
+  --btn-ink: #ffffff;
+  --brand-font: var(--sans);
+  --brand-tracking: 0.08em;
+  --display-tracking: -0.025em;
+  --band-bg: #111111;
+  --band-ink: #eeeeee;
+  --band-ink-soft: #bbbbbb;
+  --band-ink-muted: #999999;
+  --band-heading: #ffffff;
+  --band-link: #a8c4a4;
+  --band-link-hover: #ffffff;
+  --footer-bg: #111111;
+  --footer-rule: #333333;
+  --footer-ink: #cccccc;
+  --footer-ink-hover: #ffffff;
+  --footer-ink-muted: #888888;
+  --preview-bg: #111111;
+  --preview-ink: #eeeeee;
+}

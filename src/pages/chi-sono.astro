@@ -1,43 +1,45 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { withBase } from "../lib/base";
 ---
 
 <BaseLayout
   title="Chi sono"
-  description="Chi è questo blog, come si scrive, contratto col lettore."
+  description="Un percorso FIRE italiano in corso: chi scrive, come si scrive, contratto col lettore."
 >
   <article class="prose">
     <h1>Chi sono</h1>
-    <p>
-      Un percorso FIRE italiano raccontato in tempo reale: metà carriera, famiglia, obiettivo
-      intorno al 2034, senza finale garantito. Scrivo in forma anonima. Sui soldi e sulle decisioni
-      cerco di essere trasparente quanto serve a capire il percorso; su ciò che mi renderebbe
-      riconoscibile, no.
+    <p class="lede">
+      Ho 46 anni e un obiettivo: rendere il lavoro una scelta intorno al 2034. Racconto numeri,
+      decisioni e dubbi — in tempo reale, senza finale garantito.
     </p>
 
-    <h2>Come nasce ciò che leggi</h2>
     <p>
-      Questo blog <strong>non</strong> è un esercizio di stile sull’intelligenza artificiale, né una
-      prova di quanto un modello riesca a “scrivere da solo”.
-    </p>
-    <p>
-      È un modo di lavorare: porto spunti, numeri e decisioni reali — e i dubbi che li
-      accompagnano; un’AI fa da interlocutore strutturato (domande, stress test, proposte di
-      struttura e di prosa), così che concetti e argomentazioni escano più sviluppati di quanto
-      resterebbero solo “pensati in testa”.
-    </p>
-    <p>
-      Dove un passaggio non mi piace, intervengo a mano. L’accordo non è “la macchina scrive e io
-      firmo”: io resto responsabile di ciò che resta sulla pagina.
+      Non sono un consulente e non sto costruendo una guida. Sono una persona a metà carriera, in
+      Italia, con una famiglia e un piano ancora aperto: il FIRE (o una sua versione <i>custom</i>) come scommessa di vita, non come
+      tutorial. Su ciò che serve a capire il percorso — soldi, scelte, incertezze — cerco di essere
+      chiaro; su ciò che mi renderebbe riconoscibile, no. L’anonimato non è freddezza: è il canale
+      che mi permette di scrivere senza dover lesinare dettagli, che magari sarebbero utili a qualche lettore.
     </p>
 
-    <h2>Contratto</h2>
     <p>
-      Il 2034 è un obiettivo, non una promessa. I numeri e le decisioni sono del percorso reale.
-      L’AI aiuta a tirarli fuori e a ordinarli; non inventa il piano al posto della vita.
+      Queste pagine possono suonare un po’ diverse da un pezzo “battuto solo a tastiera”. Non è un
+      bug da nascondere. Lavoro con un’intelligenza artificiale come interlocutore strutturato:
+      domande, stress test, proposte di struttura e di prosa. Io porto la vita e le decisioni; dove
+      un passaggio non fluisce, intervengo a mano. L’accordo non è “la macchina scrive e io firmo” —
+      resto responsabile di ciò che resta sulla pagina.
     </p>
-    <p class="muted">
-      Approfondimento narrativo: il pezzo fondativo sul metodo (in preview nella sezione Percorso).
+
+    <p>
+      Il 2034 è un obiettivo, non una promessa. I numeri e le decisioni sono del percorso reale;
+      l’AI aiuta a tirarli fuori e a ordinarli, non inventa il piano al posto della vita.
+      Se vi fa piacere provare questa avventura insieme, sono qui.
     </p>
+
+    <div class="cta-row">
+      <a class="btn" href={withBase("percorso/")}>Inizia dal percorso</a>
+      <a class="btn secondary" href={withBase("articoli/02-come-nasce-questo-blog/")}
+        >Come nascono questi pezzi</a>
+    </div>
   </article>
 </BaseLayout>

@@ -1,0 +1,42 @@
+/* Nordico freddo: carta chiara, slate, sans dominante, poco ornamento */
+[data-theme="chalk"] {
+  --color-scheme: light;
+  --bg: #f3f5f7;
+  --bg-elevated: #ffffff;
+  --ink: #1c2430;
+  --ink-muted: #5b6775;
+  --accent: #2f5d8a;
+  --accent-soft: #4a7aa8;
+  --rule: #d5dce6;
+  --max: 42rem;
+  --wrap: 52rem;
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: "Segoe UI", system-ui, sans-serif;
+  --body-font: var(--sans);
+  --display-font: var(--serif);
+  --body-size: 1.1rem;
+  --body-leading: 1.65;
+  --body-surface: var(--bg);
+  --header-bg: color-mix(in srgb, var(--bg-elevated) 92%, transparent);
+  --header-blur: blur(4px);
+  --radius: 4px;
+  --btn-radius: 6px;
+  --btn-ink: #ffffff;
+  --brand-font: var(--sans);
+  --brand-tracking: 0.01em;
+  --display-tracking: -0.015em;
+  --band-bg: #e8eef4;
+  --band-ink: #1c2430;
+  --band-ink-soft: #5b6775;
+  --band-ink-muted: #6b7785;
+  --band-heading: #1c2430;
+  --band-link: var(--accent);
+  --band-link-hover: #1c2430;
+  --footer-bg: #e8eef4;
+  --footer-rule: #c5ced8;
+  --footer-ink: #3d4a5a;
+  --footer-ink-hover: #1c2430;
+  --footer-ink-muted: #6b7785;
+  --preview-bg: #1c2430;
+  --preview-ink: #e8eef4;
+}

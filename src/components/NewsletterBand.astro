@@ -1,0 +1,28 @@
+---
+const substackEmbed = "https://bastachebastino.substack.com/embed";
+const substackUrl = "https://bastachebastino.substack.com";
+---
+
+<section class="newsletter-band" aria-labelledby="newsletter-band-title">
+  <div class="wrap newsletter-band__inner">
+    <h2 id="newsletter-band-title">Newsletter</h2>
+    <p class="newsletter-band__lede">
+      Quando esce un pezzo nuovo, una mail breve con titolo, cover e link. Il testo resta sul sito.
+    </p>
+    <div class="newsletter-band__embed">
+      <iframe
+        title="Iscriviti alla newsletter Basta che bastino"
+        src={substackEmbed}
+        width="480"
+        height="150"
+        style="border: 1px solid var(--rule); background: var(--bg-elevated); max-width: 100%;"
+        frameborder="0"
+        scrolling="no"
+      ></iframe>
+      <p class="muted">
+        Se il form non compare:{" "}
+        <a href={substackUrl} rel="noopener noreferrer">iscriviti su Substack</a>.
+      </p>
+    </div>
+  </div>
+</section>

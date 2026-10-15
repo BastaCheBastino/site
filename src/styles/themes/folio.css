@@ -1,0 +1,44 @@
+/* Rivista scura: tipografia in primo piano, contrasto alto, niente “caldo blog” */
+[data-theme="folio"] {
+  --color-scheme: dark;
+  --bg: #12141a;
+  --bg-elevated: #1a1d26;
+  --ink: #ebe6dc;
+  --ink-muted: #9a9488;
+  --accent: #e8c07a;
+  --accent-soft: #c9a35a;
+  --rule: #2c3140;
+  --max: 40rem;
+  --wrap: 50rem;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: "Segoe UI", system-ui, sans-serif;
+  --body-font: var(--serif);
+  --display-font: var(--serif);
+  --body-size: 1.15rem;
+  --body-leading: 1.75;
+  --body-surface:
+    radial-gradient(900px 480px at 0% 0%, #1e2433 0%, transparent 50%),
+    var(--bg);
+  --header-bg: color-mix(in srgb, var(--bg-elevated) 90%, transparent);
+  --header-blur: blur(8px);
+  --radius: 0;
+  --btn-radius: 0;
+  --btn-ink: #12141a;
+  --brand-font: var(--serif);
+  --brand-tracking: 0.04em;
+  --display-tracking: -0.02em;
+  --band-bg: #0b0c10;
+  --band-ink: #d8d2c6;
+  --band-ink-soft: #a39e93;
+  --band-ink-muted: #8a857a;
+  --band-heading: #ebe6dc;
+  --band-link: var(--accent);
+  --band-link-hover: #fff4d6;
+  --footer-bg: #0b0c10;
+  --footer-rule: #2c3140;
+  --footer-ink: #a39e93;
+  --footer-ink-hover: #ebe6dc;
+  --footer-ink-muted: #6f6a61;
+  --preview-bg: #0b0c10;
+  --preview-ink: #ebe6dc;
+}

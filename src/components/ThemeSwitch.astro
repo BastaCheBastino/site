@@ -1,0 +1,40 @@
+---
+import { THEMES, DEFAULT_THEME, THEME_STORAGE_KEY } from "../lib/themes";
+---
+
+<div class="theme-switch">
+  <label for="theme-select">Tema</label>
+  <select id="theme-select" name="theme" aria-label="Scegli tema grafico">
+    {
+      THEMES.map((theme) => (
+        <option value={theme.id}>{theme.label}</option>
+      ))
+    }
+  </select>
+</div>
+
+<script>
+  import { DEFAULT_THEME, THEME_STORAGE_KEY } from "../lib/themes";
+
+  const select = document.getElementById("theme-select");
+  if (select instanceof HTMLSelectElement) {
+    let saved: string | null = null;
+    try {
+      saved = localStorage.getItem(THEME_STORAGE_KEY);
+    } catch {
+      /* ignore */
+    }
+    const theme = saved || DEFAULT_THEME;
+    document.documentElement.setAttribute("data-theme", theme);
+    select.value = theme;
+    select.addEventListener("change", () => {
+      const next = select.value;
+      document.documentElement.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem(THEME_STORAGE_KEY, next);
+      } catch {
+        /* ignore */
+      }
+    });
+  }
+</script>

@@ -1,0 +1,46 @@
+/* Baseline attuale: carta calda, terracotta, serif da libro */
+:root,
+[data-theme="cream"] {
+  --color-scheme: light;
+  --bg: #f7f1e8;
+  --bg-elevated: #fffaf3;
+  --ink: #2a2118;
+  --ink-muted: #6b5a48;
+  --accent: #9a5b3c;
+  --accent-soft: #c4895f;
+  --rule: #e4d5c3;
+  --max: 42rem;
+  --wrap: 52rem;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: "Segoe UI", system-ui, sans-serif;
+  --body-font: var(--serif);
+  --display-font: var(--serif);
+  --body-size: 1.125rem;
+  --body-leading: 1.7;
+  --body-surface:
+    radial-gradient(1200px 600px at 10% -10%, #ffe7c8 0%, transparent 55%),
+    radial-gradient(900px 500px at 100% 0%, #f0d7c0 0%, transparent 45%),
+    var(--bg);
+  --header-bg: color-mix(in srgb, var(--bg-elevated) 86%, transparent);
+  --header-blur: blur(6px);
+  --radius: 2px;
+  --btn-radius: 999px;
+  --btn-ink: var(--bg-elevated);
+  --brand-font: var(--sans);
+  --brand-tracking: 0.02em;
+  --display-tracking: 0;
+  --band-bg: color-mix(in srgb, var(--ink) 92%, #1a120c);
+  --band-ink: #f7e7d4;
+  --band-ink-soft: color-mix(in srgb, #f7e7d4 82%, transparent);
+  --band-ink-muted: color-mix(in srgb, #f7e7d4 70%, transparent);
+  --band-heading: #fffaf3;
+  --band-link: var(--accent-soft);
+  --band-link-hover: #fffaf3;
+  --footer-bg: var(--band-bg);
+  --footer-rule: color-mix(in srgb, #f7e7d4 18%, transparent);
+  --footer-ink: color-mix(in srgb, #f7e7d4 78%, transparent);
+  --footer-ink-hover: #fffaf3;
+  --footer-ink-muted: color-mix(in srgb, #f7e7d4 55%, transparent);
+  --preview-bg: #3d2a1d;
+  --preview-ink: #f7e7d4;
+}

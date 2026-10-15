@@ -1,22 +1,39 @@
 ---
 import "../styles/global.css";
 import { withBase } from "../lib/base";
+import NewsletterBand from "../components/NewsletterBand.astro";
+import ThemeSwitch from "../components/ThemeSwitch.astro";
+import { DEFAULT_THEME, THEME_STORAGE_KEY } from "../lib/themes";
 
 interface Props {
   title: string;
   description?: string;
   path?: string;
+  showNewsletterBand?: boolean;
 }
 
-const { title, description = "Percorso FIRE italiano in corso. Preview non pubblica.", path = "" } =
-  Astro.props;
+const {
+  title,
+  description = "Percorso FIRE italiano in corso. Preview non pubblica.",
+  path = "",
+  showNewsletterBand = false,
+} = Astro.props;
 const pageTitle = title === "Home" ? "Basta che bastino (preview)" : `${title} · Basta che bastino`;
 const canonical = new URL(path || Astro.url.pathname, Astro.site);
 const isProd = import.meta.env.PROD;
+const isDev = import.meta.env.DEV;
+/** Banner “Preview” su Pages finché non è il go-live pubblico. */
+const showPreviewBanner = true;
+/** Switch temi: solo `astro dev` in locale. */
+const showThemeExplore = isDev;
+
+if (showThemeExplore) {
+  await import("../styles/themes-explore.css");
+}
 ---
 
 <!doctype html>
-<html lang="it">
+<html lang="it" data-theme={DEFAULT_THEME}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,6 +41,16 @@ const isProd = import.meta.env.PROD;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <title>{pageTitle}</title>
+    {
+      showThemeExplore && (
+        <script is:inline define:vars={{ storageKey: THEME_STORAGE_KEY, defaultTheme: DEFAULT_THEME }}>
+          try {
+            var t = localStorage.getItem(storageKey) || defaultTheme;
+            document.documentElement.setAttribute("data-theme", t);
+          } catch (e) {}
+        </script>
+      )
+    }
     {
       isProd && (
         <script
@@ -36,9 +63,23 @@ const isProd = import.meta.env.PROD;
     }
   </head>
   <body>
-    <div class="banner-preview">
-      <strong>Preview</strong> — sito di prova su GitHub Pages. Non è il lancio pubblico.
-    </div>
+    {
+      showPreviewBanner && (
+        <div class="banner-preview">
+          <span>
+            <strong>Preview</strong> — sito di prova su GitHub Pages. Non è il lancio pubblico.
+          </span>
+          {showThemeExplore && <ThemeSwitch />}
+        </div>
+      )
+    }
+    {
+      !showPreviewBanner && showThemeExplore && (
+        <div class="banner-preview">
+          <ThemeSwitch />
+        </div>
+      )
+    }
     <header class="site-header">
       <div class="wrap inner">
         <a class="brand" href={withBase()}>Basta che bastino</a>
@@ -53,10 +94,16 @@ const isProd = import.meta.env.PROD;
     <main class="wrap">
       <slot />
     </main>
+    {showNewsletterBand && <NewsletterBand />}
     <footer class="site-footer">
       <div class="wrap inner">
-        <p>Obiettivo 2034 — non una promessa. Anonimo verso i lettori.</p>
-        <p class="muted">Bozze in preview · noindex</p>
+        <nav class="footer-nav" aria-label="Piè di pagina">
+          <a href={withBase("percorso/")}>Percorso</a>
+          <a href={withBase("articoli/")}>Articoli</a>
+          <a href={withBase("chi-sono/")}>Chi sono</a>
+          <a href={withBase("newsletter/")}>Newsletter</a>
+        </nav>
+        <p class="muted">Obiettivo 2034 — non una promessa.</p>
       </div>
     </footer>
   </body>

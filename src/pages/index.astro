@@ -9,7 +9,7 @@ const posts = (await getCollection("posts", ({ data }) => data.draft !== true)).
 const base = siteBase();
 ---
 
-<BaseLayout title="Home" path={base}>
+<BaseLayout title="Home" path={base} showNewsletterBand>
   <section class="hero">
     <h1>Un percorso FIRE italiano, mentre accade.</h1>
     <p class="lede">
