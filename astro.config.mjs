@@ -2,12 +2,11 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 
-// Preview / test: GitHub Pages project site → https://bastachebastino.github.io/site/
-// Live (custom domain): ripristinare site = https://bastachebastino.it e base = "/"
-// Finché non è il lancio, resta noindex nel layout.
+// Live: custom domain. Preview path /site/ solo se si torna a project Pages senza dominio.
+// Locale: http://localhost:4321/…
 export default defineConfig({
-  site: "https://bastachebastino.github.io",
-  base: "/site/",
+  site: "https://www.bastachebastino.it",
+  base: "/",
   trailingSlash: "always",
   integrations: [mdx()],
   markdown: {

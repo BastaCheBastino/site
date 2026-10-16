@@ -22,8 +22,8 @@ const pageTitle = title === "Home" ? "Basta che bastino" : `${title} · Basta ch
 const canonical = new URL(path || Astro.url.pathname, Astro.site);
 const isProd = import.meta.env.PROD;
 const isDev = import.meta.env.DEV;
-/** Banner “Preview” su Pages finché non è il go-live pubblico. */
-const showPreviewBanner = true;
+/** Banner “Preview”: false = go-live pubblico su bastachebastino.it */
+const showPreviewBanner = false;
 /** Switch temi: solo `astro dev` in locale. */
 const showThemeExplore = isDev;
 
@@ -37,7 +37,7 @@ if (showThemeExplore) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="robots" content="index, follow" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <title>{pageTitle}</title>
