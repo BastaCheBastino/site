@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { siteBase, withBase } from "../lib/base";
 
-const latest = (await getCollection("posts", ({ data }) => data.draft !== true))
+const latest = (await getCollection("posts", ({ data }) => data.draft !== true && !data.unlisted))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 const base = siteBase();

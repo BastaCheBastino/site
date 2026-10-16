@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { withBase } from "../lib/base";
 
-const posts = (await getCollection("posts", ({ data }) => data.draft !== true)).sort(
+const posts = (await getCollection("posts", ({ data }) => data.draft !== true && !data.unlisted)).sort(
   (a, b) => (a.data.order ?? 99) - (b.data.order ?? 99),
 );
 ---

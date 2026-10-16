@@ -10,6 +10,8 @@ const posts = defineCollection({
     order: z.number().optional(),
     series: z.string().optional(),
     draft: z.boolean().default(true),
+    /** Se true: route generata ma esclusa da home / percorso / archivio. */
+    unlisted: z.boolean().default(false),
     cover: z.string().optional(),
     coverAlt: z.string().optional(),
   }),
