@@ -1,7 +1,7 @@
 ---
 title: "Il mio obiettivo: smettere di lavorare a 54 anni"
 description: "Il 2034 come equilibrio, non come feticcio: quando il tratto è finanziabile."
-pubDate: 2026-10-06
+pubDate: 2026-10-10
 order: 3
 series: fondativi
 draft: false
@@ -14,13 +14,13 @@ Nei post precedenti ho raccontato il *perché*, e come nascono — e nasceranno 
 
 L’obiettivo, come detto, a oggi, è intorno al 2034: avrò circa cinquantaquattro anni. Non è l’età giusta in sé, né una data sacra sul calendario; è il punto di equilibrio a cui arrivano i conti quando cerchi abbastanza anni di lavoro alle spalle da tenere in piedi il tratto fino alla pensione, e abbastanza anni di libertà davanti da non averli rimandati tutti. Potrebbe essere un paio d’anni prima o dopo: il numero non è il punto. Il punto è massimizzare la probabilità di un retirement sostenibile — non indovinare la data perfetta.
 
-Se ti aspetti la storia di chi ha scelto cinquantaquattro perché “a quell’età si fa”, ti deludo. Né cinquantacinque né sessanta sono età magiche — e nemmeno sessantasei. Se avessi potuto scegliere così, allora sarei andato in FIRE a 44 anni. O a 34.
+Se vi aspettate la storia di chi ha scelto cinquantaquattro perché “a quell’età si fa”, vi deludo. Né cinquantacinque né sessanta sono età magiche — e nemmeno sessantasei. Se avessi potuto scegliere così, allora sarei andato in FIRE a 44 anni. O a 34.
 
-Quella che sto usando è un output, non un’aspirazione anagrafica; emerge quando metti insieme la durata del tratto da finanziare e la capacità di accumulo, e il fatto che gli anni buoni non pesano tutti allo stesso modo. Non sto correndo verso il traguardo di una gara; sto costruendo un passaggio — dalla fase in cui metto da parte a quella in cui **consumo** il capitale con metodo, fino all’assegno di Stato — e sto cercando il momento in cui quel passaggio abbia senso. Se quel momento si chiama 2034, bene; se i numeri e la vita lo spostano di un anno, non è un tradimento. È il piano che fa il suo lavoro.
+Quella che sto usando è un output, non un’aspirazione anagrafica; emerge quando si mettono insieme la durata del tratto da finanziare e la capacità di accumulo, e il fatto che gli anni buoni non pesano tutti allo stesso modo. Non sto correndo verso il traguardo di una gara; sto costruendo un passaggio — dalla fase in cui metto da parte a quella in cui **consumo** il capitale con metodo, fino all’assegno di Stato — e sto cercando il momento in cui quel passaggio abbia senso. Se quel momento si chiama 2034, bene; se i numeri e la vita lo spostano di un anno, non è un tradimento. È il piano che fa il suo lavoro.
 
 In ogni caso, una data sul calendario c’è, e non è un caso: dietro ci sono ragionamenti e fogli Excel, ipotesi da verificare. Ma la data resta secondaria rispetto a una condizione — *quando il tratto è finanziabile*: in sostanza individuare il punto quando il patrimonio, con un margine, regga gli anni fino alla pensione di Stato senza dover rischiare in modo insostenibile. Se poi scoprissi che la copertura potesse maturare già nel 2033, o nel 2032, andrebbe bene lo stesso — ovviamente, *se* gli incastri di famiglia lo dovessero consentire!
 
-Non c’è un motivo magico per cui il 2034 sia “migliore” del 2033 in sé. Il feticcio della data è comodo da raccontare e pericoloso da seguire: ti fa smettere perché “è l’anno”, o restare perché “non è ancora l’anno”, indipendentemente dai conti. Io voglio il contrario: i conti che aprono o chiudono la porta; l’anno come etichetta di ciò che i conti dicono *oggi*.
+Non c’è un motivo magico per cui il 2034 sia “migliore” del 2033 in sé. Il feticcio della data è comodo da raccontare e pericoloso da seguire: vi fa smettere perché “è l’anno”, o restare perché “non è ancora l’anno”, indipendentemente dai conti. Io voglio il contrario: i conti che aprono o chiudono la porta; l’anno come etichetta di ciò che i conti dicono *oggi*.
 
 Mi sono chiesto, e mi chiedo ancora, cosa vincerebbe in due scenari scomodi. Il primo: nel 2032 il patrimonio c’è già, ma non ho più voglia di lasciare il lavoro. Oggi, all’inizio del percorso, lo trovo improbabile. L’idea della transizione è chiara; intorno ci sono la vita di famiglia e le tempistiche di chi mi sta accanto — e il figlio che in quegli anni potrebbe essere altrove o ancora in casa: insomma, pezzi ancora in movimento, e che possono far slittare un anno. Di “non lasciare più il lavoro”, però, non se ne parla più di tanto: l’ipotesi base resta uscire. Il secondo scenario è più plausibile, e più duro: c’è la voglia di uscire, ma non ci sono i numeri. Almeno non ancora. E qui la soluzione più ovvia — Pareto docet — è continuare a lavorare. 
 
@@ -40,4 +40,4 @@ Tra la fine del mutuo — intorno all’agosto 2031 — e il mio obiettivo intor
 
 Il 2034, oggi, è la mia bussola. Ci punto; lo aggiorno se i numeri o gli incastri lo chiedono; non esco prima che la copertura ci sia; non rinvio all’infinito perché “un altro anno è sempre meglio”, e non tratto un mese necessario come un fallimento. Se arriverò all’età prevista senza il capitale previsto, si continua a lavorare. Se arriverò con il capitale e senza più voglia, andrà ripensato lo stesso — anche se, oggi, quel secondo caso mi sembra il meno probabile. Il contratto non cambia: sincerità sul percorso, nessun lieto fine inventato in anticipo.
 
-La domanda che mi porto dietro, e che lascio anche a chi legge, è semplice da formulare e difficile da vivere: la tua data è un feticcio, o un equilibrio? La mia, per ora, vuole essere la seconda cosa. Poi i conti, e la vita, diranno se regge.
+La domanda che mi porto dietro, e che lascio anche a chi legge, è semplice da formulare e difficile da vivere: la vostra data è un feticcio, o un equilibrio? La mia, per ora, vuole essere la seconda cosa. Poi i conti, e la vita, diranno se regge.

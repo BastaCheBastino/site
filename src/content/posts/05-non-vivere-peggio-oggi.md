@@ -10,11 +10,11 @@ coverAlt: "Cover astratta: una bilancia in equilibrio soft"
 ---
 
 
-Nei pezzi precedenti ho raccontato il *perché* e il *quando*. Qui c’è un’altra domanda, e spesso arriva travestita da consiglio: quanto sei disposto a tagliare oggi, per arrivare prima a domani?
+Nei pezzi precedenti ho raccontato il *perché* e il *quando*. Qui c’è un’altra domanda, e spesso arriva travestita da consiglio: quanto siete disposti a tagliare oggi, per arrivare prima a domani?
 
 Io non parto da lì. Non ho mai partito da lì. L’idea che il FIRE si costruisca a colpi di digiuno — meno cene e meno viaggi, meno vita in nome di una libertà che arriverà dopo — mi sembra un modo elegante di regalarci gli anni che stiamo vivendo *adesso*. Se fra qualche tempo dovessi guardarmi indietro e pensare: «abbiamo anticipato qualcosa, ma abbiamo impoverito quello che c’era», avrei violato il punto stesso del progetto. Gli anni da qui all’obiettivo devono restare gradevoli; non devono accumulare recriminazioni. Tagliare per accelerare non è una scorciatoia: è un altro contratto, e non è il mio.
 
-Non sto dicendo come *dovresti* spendere. Sto dicendo perché *io* non comprimerei queste cose. Per chi ha un lavoro terribile, o altri punti di partenza, sacrificarsi per anticipare può avere un senso; nel mio caso la vita attuale funziona, e può funzionare ancora alcuni anni. Quando arriverà il punto di equilibrio cambierà il modo di vivere — non perché avrò vissuto in tensione solo per anticipare.
+Non sto dicendo come *dovreste* spendere. Sto dicendo perché *io* non comprimerei queste cose. Per chi ha un lavoro terribile, o altri punti di partenza, sacrificarsi per anticipare può avere un senso; nel mio caso la vita attuale funziona, e può funzionare ancora alcuni anni. Quando arriverà il punto di equilibrio cambierà il modo di vivere — non perché avrò vissuto in tensione solo per anticipare.
 
 Il trade-off, allora, non è tra eroismo della rinuncia e debolezza del consumo. È tra un anno di famiglia che funzioni — soddisfacente, nel senso concreto di ciò che apprezziamo — e lo spazio che resta da mettere da parte per costruire il tratto fino alla pensione di Stato. Bilanciare quelle due cose; non trasformare la prima nella moneta della seconda. C’è anche una domanda che merita spazio suo, e che qui solo accenno: quanto vale un’esperienza, un ricordo, fatto *adesso*, rispetto alla stessa cosa tra dieci o vent’anni — corpo diverso, persone cambiate o assenti? Non è un sofisma: è il motivo per cui non voglio comprare il futuro a rate di presente.
 
@@ -38,4 +38,4 @@ Il vivere bene oggi, e nei prossimi anni, non dovrebbe cambiare *perché* sto co
 
 Tornerò su come costruisco il budget e sulle vacanze come capitolo a sé; sul valore di un’esperienza fatta ora; e su quanto mi serve perché il tratto fino alla pensione tenga — pezzi dove i numeri potranno entrare con più calma. Qui volevo solo fissare la posizione. Non sto chiedendo a nessuno di vivere come vivo io; sto dicendo come rifiuto di vivere io, mentre accumulo.
 
-La domanda che mi porto dietro è semplice: stai ottimizzando la rinuncia, o stai progettando un anno che regge — anche mentre metti da parte? La mia risposta, per ora, vuole essere la seconda. Poi i conti, anno su anno, diranno se regge.
+La domanda che mi porto dietro è semplice: state ottimizzando la rinuncia, o state progettando un anno che regge — anche mentre mettete da parte? La mia risposta, per ora, vuole essere la seconda. Poi i conti, anno su anno, diranno se regge.
