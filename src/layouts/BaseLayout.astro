@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import { withBase } from "../lib/base";
+import { SITE_DESCRIPTION, SITE_NAME, SUBSTACK_URL } from "../lib/brand";
 import NewsletterBand from "../components/NewsletterBand.astro";
 import ThemeSwitch from "../components/ThemeSwitch.astro";
 import { DEFAULT_THEME, THEME_STORAGE_KEY } from "../lib/themes";
@@ -10,22 +11,63 @@ interface Props {
   description?: string;
   path?: string;
   showNewsletterBand?: boolean;
+  /** Open Graph type */
+  ogType?: "website" | "article";
+  /** Path o URL assoluto cover (es. /site/covers/01-cover.jpg) */
+  ogImage?: string;
+  ogImageAlt?: string;
+  publishedTime?: Date;
+  /** JSON-LD aggiuntivo (es. BlogPosting); WebSite è sempre emesso */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 const {
   title,
-  description = "Un percorso FIRE italiano in corso. Obiettivo 2034 — non una promessa.",
+  description = SITE_DESCRIPTION,
   path = "",
   showNewsletterBand = false,
+  ogType = "website",
+  ogImage,
+  ogImageAlt,
+  publishedTime,
+  jsonLd,
 } = Astro.props;
-const pageTitle = title === "Home" ? "Basta che bastino" : `${title} · Basta che bastino`;
+
+const pageTitle = title === "Home" ? SITE_NAME : `${title} · ${SITE_NAME}`;
 const canonical = new URL(path || Astro.url.pathname, Astro.site);
+const siteOrigin = Astro.site ?? canonical;
 const isProd = import.meta.env.PROD;
 const isDev = import.meta.env.DEV;
 /** Banner “Preview”: true finché si resta su github.io/site/; false al go-live www */
 const showPreviewBanner = true;
 /** Switch temi: solo `astro dev` in locale. */
 const showThemeExplore = isDev;
+
+const absoluteOgImage = ogImage
+  ? ogImage.startsWith("http")
+    ? ogImage
+    : new URL(ogImage.startsWith("/") ? ogImage : `/${ogImage}`, siteOrigin).href
+  : undefined;
+
+const websiteLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  url: new URL(withBase(), siteOrigin).href,
+  inLanguage: "it",
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: new URL(withBase(), siteOrigin).href,
+    sameAs: [SUBSTACK_URL],
+  },
+};
+
+const graph = [
+  websiteLd,
+  ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : []),
+];
 
 if (showThemeExplore) {
   await import("../styles/themes-explore.css");
@@ -37,10 +79,34 @@ if (showThemeExplore) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="index, follow" />
+    {/* Preview: noindex (allineato a robots.txt Disallow). Al go-live: index, follow + Allow. */}
+    <meta
+      name="robots"
+      content={showPreviewBanner ? "noindex, nofollow" : "index, follow"}
+    />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <title>{pageTitle}</title>
+
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.href} />
+    {absoluteOgImage && <meta property="og:image" content={absoluteOgImage} />}
+    {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
+    {publishedTime && (
+      <meta property="article:published_time" content={publishedTime.toISOString()} />
+    )}
+
+    <meta name="twitter:card" content={absoluteOgImage ? "summary_large_image" : "summary"} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    {absoluteOgImage && <meta name="twitter:image" content={absoluteOgImage} />}
+
+    <script type="application/ld+json" set:html={JSON.stringify(graph)} />
+
     {
       showThemeExplore && (
         <script is:inline define:vars={{ storageKey: THEME_STORAGE_KEY, defaultTheme: DEFAULT_THEME }}>
@@ -82,7 +148,7 @@ if (showThemeExplore) {
     }
     <header class="site-header">
       <div class="wrap inner">
-        <a class="brand" href={withBase()}>Basta che bastino</a>
+        <a class="brand" href={withBase()}>{SITE_NAME}</a>
         <nav class="nav" aria-label="Principale">
           <a href={withBase("percorso/")}>Percorso</a>
           <a href={withBase("articoli/")}>Articoli</a>

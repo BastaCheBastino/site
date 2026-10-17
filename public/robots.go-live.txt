@@ -1,0 +1,5 @@
+# Copiare su robots.txt al go-live (www.bastachebastino.it, base "/").
+User-agent: *
+Allow: /
+
+Sitemap: https://www.bastachebastino.it/sitemap-index.xml

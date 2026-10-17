@@ -2,6 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 import DisqusThread from "../components/DisqusThread.astro";
 import { withBase } from "../lib/base";
+import { SITE_NAME, SUBSTACK_URL } from "../lib/brand";
 
 interface Props {
   title: string;
@@ -12,7 +13,7 @@ interface Props {
   coverAlt?: string;
   /** Slug stabile per Disqus (es. id collezione). */
   identifier: string;
-  /** Path canonico relativo al sito, es. articoli/slug/ */
+  /** Path canonico relativo al sito, es. articoli/slug/ o /site/articoli/slug/ */
   path: string;
 }
 
@@ -23,14 +24,63 @@ const dateLabel = pubDate.toLocaleDateString("it-IT", {
   day: "numeric",
 });
 const canonicalUrl = new URL(path, Astro.site).href;
+const coverPath = cover ? withBase(cover.replace(/^\//, "")) : undefined;
+const coverAbs = coverPath
+  ? new URL(coverPath.startsWith("/") ? coverPath : `/${coverPath}`, Astro.site).href
+  : undefined;
+
+const blogPosting = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: title,
+  description,
+  datePublished: pubDate.toISOString(),
+  inLanguage: "it",
+  mainEntityOfPage: canonicalUrl,
+  url: canonicalUrl,
+  ...(coverAbs
+    ? {
+        image: {
+          "@type": "ImageObject",
+          url: coverAbs,
+          description: coverAlt || undefined,
+        },
+      }
+    : {}),
+  author: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: new URL(withBase(), Astro.site!).href,
+  },
+  publisher: {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: new URL(withBase(), Astro.site!).href,
+    sameAs: [SUBSTACK_URL],
+  },
+};
 ---
 
-<BaseLayout title={title} description={description} path={path}>
+<BaseLayout
+  title={title}
+  description={description}
+  path={path}
+  ogType="article"
+  ogImage={coverPath}
+  ogImageAlt={coverAlt}
+  publishedTime={pubDate}
+  jsonLd={blogPosting}
+>
   <article class="prose">
     {
       cover && (
         <figure class="cover">
-          <img src={withBase(cover.replace(/^\//, ""))} alt={coverAlt || ""} width="1600" height="900" />
+          <img
+            src={withBase(cover.replace(/^\//, ""))}
+            alt={coverAlt || ""}
+            width="1600"
+            height="900"
+          />
         </figure>
       )
     }

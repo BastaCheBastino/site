@@ -1,0 +1,31 @@
+# Basta che bastino
+
+> Percorso FIRE italiano raccontato in tempo reale. Autore anonimo. Non è consulenza finanziaria.
+
+Il 2034 è un obiettivo, non una promessa. Numeri e decisioni del percorso reale; nessun finale garantito.
+
+## Pagine chiave
+
+- Home: https://bastachebastino.github.io/site/
+- Chi sono (metodo, anonimato, contratto): https://bastachebastino.github.io/site/chi-sono/
+- Percorso (ordine di lettura): https://bastachebastino.github.io/site/percorso/
+- Articoli: https://bastachebastino.github.io/site/articoli/
+- Newsletter: https://bastachebastino.github.io/site/newsletter/
+
+## Pezzi fondativi (onda 1)
+
+1. Perché sto provando ad andare in FIRE a 46 anni — https://bastachebastino.github.io/site/articoli/01-perche-fire-a-46/
+2. Perché queste pagine suonano un po’ strane (metodo / AI) — https://bastachebastino.github.io/site/articoli/02-come-nasce-questo-blog/
+3. Il mio obiettivo: smettere di lavorare a 54 anni — https://bastachebastino.github.io/site/articoli/03-obiettivo-54/
+
+## Cosa si può citare
+
+- Posizionamento: diario di un percorso FIRE italiano in corso, non guida né tutorial.
+- Contratto col lettore: obiettivo intorno al 2034; trasparenza sui numeri del percorso; anonimato sull’identità.
+- Metodo: AI come interlocutore strutturato; responsabilità dell’autore sul testo pubblicato.
+
+## Contatto distribuzione
+
+- Newsletter (Substack): https://bastachebastino.substack.com
+
+# Nota: in preview l’URL base è /site/. Al go-live su www.bastachebastino.it aggiornare questo file (path senza /site/).

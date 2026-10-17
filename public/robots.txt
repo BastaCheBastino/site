@@ -1,2 +1,4 @@
+# Preview: niente crawl (allineato a meta noindex nel layout).
+# Go-live www: sostituire con il contenuto di robots.go-live.txt
 User-agent: *
 Disallow: /
